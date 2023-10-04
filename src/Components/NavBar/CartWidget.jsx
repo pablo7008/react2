@@ -1,4 +1,4 @@
-import carrito from "../../assets/shopping.png"
+import carrito from "../../logo-carro/shopping.png"
 
 const styles = {
     img:{

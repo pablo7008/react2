@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import Bebidas from '../../data/products.json';
+import React, { useEffect, useState } from 'react';
 import ItemDetail from '../Details/ItemDetail';
+import { useParams } from "react-router-dom";
+import { promesa } from '../Promesa/Promise';
 
-const ItemDetailContainer = ({id}) => {
-    const [item, setItems] = useState ([])
+const ItemDetailContainer = () => {
+    const [item, setItems] = useState({});
+    const [entro, setEntro] = useState(false);
+    const {id} = useParams();
+    const integer = parseInt(id)
 
     useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(Bebidas)
-            }, 2000)
-        })
-        promesa.then(result => {
-            setItems(result.find(item=>item.category === id));
-            console.log("si" + item)
-        })
-    },[])
-/*Hola, no puedo lograr hacer andar esto ya que en el setItems 
-no se agrega ningun valor a mi variable item, y si esta no tiene valor
-no puedo pasarla al componente ItemDetail para conseguir el detalle
-del producto en especifico..*/
+        setEntro(true);
+        promesa()
+        .then((result) => 
+            setItems(result.find((item) => item.id === integer)))
+        .catch((error) => console.log(error))
+        .finally(() => setEntro(false));
+    },[integer])
 
     return (
         <>
-        <h3>Detalle</h3>
-        {item.length == 0 ?(
-            <div>Loading...</div>)
-        : ( <ItemDetail item={item} />
-            )}
+        <h3 style={{marginLeft:"4em"}}>Detalle</h3>
+        {entro ? (<div>Loading...</div>)
+        :  <ItemDetail {...item} />
+            }
         </>
     )
     }

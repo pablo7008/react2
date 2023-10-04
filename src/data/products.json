@@ -3,70 +3,80 @@
         "id": 1, 
         "name":"Catena", 
         "category":"vino",
-        "img": "../../assets/catena.jpeg", 
-        "price": 2000
+        "img": ["../../assets/catena.jpeg"], 
+        "price": 2000,
+        "stock": 5
     },
     {
         "id": 2, 
         "name":"Penfolds", 
         "category":"vino",
-        "img": ["./assets/penfolds.jpeg"], 
-        "price": 2700
+        "img": ["../../assets/penfolds.jpeg"], 
+        "price": 2700,
+        "stock": 14
     },
     {
         "id": 3, 
         "name":"Torres", 
         "category":"vino",
-        "img": ["../assets/torres.jpeg"], 
-        "price": 2500
+        "img": ["../../assets/torres.jpeg"], 
+        "price": 2500,
+        "stock": 0
     },
     {
         "id": 4, 
         "name":"Antinori", 
         "category":"vino",
         "img": "../assets/Antinori.jpeg", 
-        "price": 2000
+        "price": 2000,
+        "stock": 2
     },
     {
         "id": 5, 
         "name":"Vega Sicilia", 
         "category":"vino",
         "img": "./assets/VegaSicilia.jpeg", 
-        "price": 2500
+        "price": 2500,
+        "stock": 0
     },
     {
         "id": 6, 
         "name":"Sernova", 
         "category":"vodka",
         "img": ["../assets/sernova.jpeg"], 
-        "price": 1000
+        "price": 1000,
+        "stock": 27
     },
     {
         "id": 7, 
         "name":"Smirnoff", 
         "category":"vodka",
-        "img": ["./assets/smirnoffjpeg.jpeg"], 
-        "price": 1200
+        "img": ["../../assets/smirnoffjpeg.jpeg"], 
+        "price": 1200,
+        "stock": 15
     },
     {
         "id": 8, 
         "name":"Skyy", 
         "category":"vodka",
-        "img": ["./components/"], 
-        "price": 1500
+        "img": ["../../assets/skyy.jpeg"], 
+        "price": 1500,
+        "stock": 6
     },
     {
         "id": 9, 
         "name":"Vittone", 
         "category":"fernet",
-        "img": ["./assets/vittone.jpeg"], 
-        "price": 700
+        "img": ["../../assets/vittone.jpeg"], 
+        "price": 700,
+        "stock": 3
     },
     {
         "id": 10, 
         "name":"Branca", 
         "category":"fernet",
-        "img": ["./assets/branca.jpeg"], 
-        "price": 1000
+        "img": ["../../assets/branca.jpeg"], 
+        "price": 1000,
+        "stock": 9
     }
 ]
