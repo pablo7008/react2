@@ -1,4 +1,6 @@
+import { useContext } from "react"
 import carrito from "../../logo-carro/shopping.png"
+import CartContext from "../context/CartContext"
 
 const styles = {
     img:{
@@ -10,7 +12,11 @@ const styles = {
         paddingLeft: 10,
     }
 }
-export const CartWidget = () => (
+
+export const CartWidget = () => {
+    const { spamCart } = useContext(CartContext)
+    console.log(spamCart)
+    return (   
 <>
-<img src = {carrito} style={styles.img} alt="Carrito" /> <span style={styles.spam}>0</span>
-</>)
+<img src = {carrito} style={styles.img} alt="Carrito" /> <span style={styles.spam}> {spamCart}</span>
+</>)}

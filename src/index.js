@@ -5,6 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom';
+import { initializeApp } from "firebase/app";
+
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCBTBF6kSLMFZzjA3EEGySwohFTQZuP04w",
+  authDomain: "coder-react-88e8c.firebaseapp.com",
+  projectId: "coder-react-88e8c",
+  storageBucket: "coder-react-88e8c.appspot.com",
+  messagingSenderId: "900609715909",
+  appId: "1:900609715909:web:2df1e2119016efa70b4aac"
+};
+
+initializeApp(firebaseConfig);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

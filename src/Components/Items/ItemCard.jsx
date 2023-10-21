@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-//import catena from '../../assets/catena.jpeg';
 
 export const ItemCard = ({item}) => {
     return (
@@ -13,7 +12,7 @@ export const ItemCard = ({item}) => {
             <Card.Img variant="top" src= {item.img}/>
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>Precio {item.price}</ListGroup.Item>
-                <ListGroup.Item>Stock {item.stock}</ListGroup.Item>
+                <ListGroup.Item>Stock {item.quantity}</ListGroup.Item>
             </ListGroup>
             <Link to={`/Detail/${item.id}`}>
                 <Button variant="primary">Ver Detalle</Button>
@@ -21,4 +20,4 @@ export const ItemCard = ({item}) => {
         </Card.Body>
         </Card>
     );
-}//No se por que no me toma las imagenes de los productos
+}

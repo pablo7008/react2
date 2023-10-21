@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../Details/ItemDetail';
 import { useParams } from "react-router-dom";
-import { promesa } from '../Promesa/Promise';
+import Loading from '../CompUniversal/Loading';
+import {doc, getDoc, getFirestore} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const [item, setItems] = useState({});
     const [entro, setEntro] = useState(false);
     const {id} = useParams();
-    const integer = parseInt(id)
 
     useEffect(() => {
         setEntro(true);
-        promesa()
-        .then((result) => 
-            setItems(result.find((item) => item.id === integer)))
+        const db = getFirestore();
+        const itemref = doc(db, "items", id)
+        getDoc(itemref)
+        .then(snapshot => {
+            if (snapshot.exists()){
+            setItems({id: snapshot.id, ...snapshot.data()})
+        }})
         .catch((error) => console.log(error))
         .finally(() => setEntro(false));
-    },[integer])
+    },[id])
 
     return (
         <>
         <h3 style={{marginLeft:"4em"}}>Detalle</h3>
-        {entro ? (<div>Loading...</div>)
+        {entro ? (<Loading/>)
         :  <ItemDetail {...item} />
             }
         </>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, onAdd}) => {
 const [count, setCount] = useState(initial);
 const restar = () => {
     if (count > 0) {
@@ -13,6 +13,10 @@ const sumar = () => {
     setCount(count + 1);
     }
 };
+const countcant = (cantidad) => {
+    onAdd(cantidad)
+    console.log("ejecutado")
+}
 return (
     <>
     <div>
@@ -27,7 +31,7 @@ return (
     <button
         className="btn btn-dark"
         disabled={count === 0 || stock === 0}
-        onClick={() => onAdd(count)}
+        onClick={() => countcant(count)}
     >
         Comprar
     </button>
