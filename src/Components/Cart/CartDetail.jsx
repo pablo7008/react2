@@ -12,6 +12,9 @@ const CartDetail = () => {
     const { cart, removeItem, clear } = useContext (CartContext)
     const [dataComprador, setDataComprador] = useState({name: "",email:""});
     const navigate = useNavigate()
+    function borrar(){
+        clear()
+    }
     const addToCart = () => {
         console.log(dataComprador)
         let reduce = cart.reduce((acumulador, actual) => acumulador + actual.preciototal, 0);
@@ -27,7 +30,7 @@ const CartDetail = () => {
         };
         const db = getFirestore();
         const orderCollection = collection(db, "orders");
-
+        borrar()
         addDoc(orderCollection, comprar)
             .then(res => navigate(`/compra/${res.id}`))
             .catch(err => console.log(err))

@@ -31,6 +31,7 @@ const CartContextProvider = ({ children}) => {
         }
         const clear = () => {
             setCart([])
+            setSpamCart(0)
 
         }
     const values = {
