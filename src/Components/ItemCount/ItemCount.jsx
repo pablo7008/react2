@@ -33,7 +33,7 @@ return (
         disabled={count === 0 || stock === 0}
         onClick={() => countcant(count)}
     >
-        Comprar
+        Comprar Ahora
     </button>
     </>
 );

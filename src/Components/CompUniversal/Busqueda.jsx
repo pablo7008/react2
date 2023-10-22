@@ -1,1 +1,0 @@
-// Cuando aplique uso de FireBase y genere la BD aca pondre la solicitud mediante API para conseguir los datos y usar el componente de forma universal..
