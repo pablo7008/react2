@@ -14,6 +14,7 @@ function App() {
       <CartContextProvider>
         <NavBar1 />
         <Routes>
+          <Route path="/" element={<ItemListContainer/>}></Route>
           <Route path="/home" element={<ItemListContainer/>}></Route>
           <Route path="/Bebidas" element={<ItemListContainer/>}></Route>
           <Route path="/category/:id" element= {<ItemListContainer greeting = "Estas son nuestras bebidas encontradas"/>}/>
